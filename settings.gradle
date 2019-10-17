@@ -1,0 +1,8 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+rootProject.name = 'topsail-sso'
+
+include('sso-auth-server', 'sso-auth-ui1', 'sso-auth-ui2')

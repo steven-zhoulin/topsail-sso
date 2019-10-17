@@ -1,0 +1,50 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.5.RELEASE'
+    id 'java'
+}
+
+//repositories {
+//    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+//    maven { url 'https://repo.spring.io/milestone' }
+//}
+
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'maven'
+    apply plugin: 'eclipse'
+    apply plugin: 'jacoco'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    group = 'com.microtomato'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    // java编译的时候缺省状态下会因为中文字符而失败
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+    bootJar {
+        enabled = false  // 默认不需要打可执行jar包
+    }
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url 'https://repo.spring.io/milestone' }
+    }
+
+    dependencies {
+        testCompile('org.springframework.boot:spring-boot-starter-test')
+    }
+
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                repository(url: "http://XXX:8081/repository/mxq/") {
+                    authentication(userName: "XXX", password: "XXX.")
+                }
+            }
+        }
+    }
+
+}
