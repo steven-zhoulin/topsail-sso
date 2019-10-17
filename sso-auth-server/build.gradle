@@ -1,0 +1,24 @@
+jar {
+    enabled = true
+}
+
+bootJar {
+    enabled = true
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.security.oauth:spring-security-oauth2:2.3.3.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'mysql:mysql-connector-java:5.1.46'
+
+    implementation "org.apache.commons:commons-lang3:3.8.1"
+    implementation 'org.projectlombok:lombok:1.18.10'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}

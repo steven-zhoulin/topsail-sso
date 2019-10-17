@@ -1,0 +1,27 @@
+jar {
+    enabled = true
+}
+
+bootJar {
+    enabled = true
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.security.oauth:spring-security-oauth2'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    // 跟页面上通过 ${#authentication.name} 获取认证用户名有关
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+
+    implementation "org.apache.commons:commons-lang3:3.8.1"
+    implementation 'org.projectlombok:lombok:1.18.10'
+
+    implementation 'org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.1.RELEASE'
+
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
